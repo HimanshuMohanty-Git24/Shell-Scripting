@@ -64,8 +64,8 @@ int main()
         sumTat = sumTat + tat[i];
         sumWt = sumWt + wt[i];
     }
-    int avgtat = sumTat / n;
-    int avgwt = sumWt / n;
+    float avgtat = (float)sumTat / n;
+    float avgwt = (float)sumWt / n;
     printf("Average TAT:%d\nAverage WT:%d\n", avgtat, avgwt);
     return 0;
 }
