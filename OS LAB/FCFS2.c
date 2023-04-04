@@ -41,7 +41,14 @@ int main()
             }
         }
         atRep[minIndex] = 999;
-        sum = sum + bt[minIndex] + (at[minIndex] - sum);
+        if (sum - atRep[minIndex] < 0)
+        {
+            sum = sum + bt[minIndex] + (at[minIndex] - sum);
+        }
+        else
+        {
+            sum = sum + bt[minIndex];
+        }
         ct[minIndex] = sum;
         itr++;
     }
@@ -64,8 +71,8 @@ int main()
         sumTat = sumTat + tat[i];
         sumWt = sumWt + wt[i];
     }
-    float avgtat = (float)sumTat / n;
-    float avgwt = (float)sumWt / n;
-    printf("Average TAT:%d\nAverage WT:%d\n", avgtat, avgwt);
+    float avgtat = (float)sumTat / (float)n;
+    float avgwt = (float)sumWt / (float)n;
+    printf("Average TAT:%f\nAverage WT:%f\n", avgtat, avgwt);
     return 0;
 }
